@@ -1,22 +1,11 @@
-/*!
- * grabbable
- * Version: 1.0.4
- *
- * Copyright 2016 Wolfgang Kurz
- * Released under the MIT license
- * https://github.com/WolfgangKurz/grabbable
- */
 "use strict";
 !function(){
 	var grabbableStyle = function(){
 		var style = document.createElement("style");
 		style.type = "text/css";
-		style.innerHTML = ".grabbable > * { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; cursor: -webkit-grab; cursor: grab } "
-			+ ".grabbable > .grabbable-dummy {"
-			+ " border: 1px solid #d4d4d4;"
-			+ " background: repeating-linear-gradient( -45deg, #fff, #fff 4px, #d4d4d4 4px, #d4d4d4 5px );"
+		style.innerHTML = ".grabbable{ -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; cursor: -webkit-grab; cursor: grab;} "
 			+ "}";
-		document.querySelector("body").appendChild(style);
+		document.body.appendChild(style);
 	};
 	var callCallback = function(elem){
 		if(document.createEventObject) {
@@ -110,8 +99,8 @@
 	else document.addEventListener("DOMContentLoaded", function(){ initGrabbable() });
 
 	HTMLElement.prototype.grabbable = function(){
-		if( (" "+this.className+" ").indexOf(" grabbable ")<0 )
-			this.className += " grabbable";
+
+			this.classList.add("grabbable");
 
 		for(var i=0; i<this.children.length; i++){
 			var el = this.children[i];
