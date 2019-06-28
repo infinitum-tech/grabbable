@@ -1,12 +1,14 @@
-# grabbable
-Drag&amp;drop reorder javascript library. Pure, no css, free.
+# Grabbable
+Drag and drop reordering javascript library, using pure javascript.
 
 ### Usage
 
-Just call grabbable() on parent node after load `grabbable.js` file.
+Call the grabbable() method on the parent node after loading the `grabbable.js` file.
+
+### Example
 
 ```javascript
-ParentNode.grabbable();
+document.getElementById("grabbable-example").grabbable();
 ```
 
-See detail usage on `sample.html`.
+See example usage in `sample.html`.
